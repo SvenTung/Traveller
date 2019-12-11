@@ -26,10 +26,9 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
   let uniqueArray = []
-  transportArray = this.journeys.map(journey => journey.transport)
-  for (transport of transportArray) {
-    if (uniqueArray.includes(transport) === false) {
-      uniqueArray.push(transport)
+  for (journey of this.journeys) {
+    if (uniqueArray.includes(journey.transport) === false) {
+      uniqueArray.push(journey.transport)
     }
   }
   return uniqueArray
