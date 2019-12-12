@@ -25,13 +25,28 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-  let uniqueArray = []
-  for (journey of this.journeys) {
+  const uniqueArray = []
+  // for (journey of this.journeys) {
+  //   if (uniqueArray.includes(journey.transport) === false) {
+  //     uniqueArray.push(journey.transport)
+  //   }
+  // }
+  // return uniqueArray
+
+  this.journeys.forEach((journey) => {
     if (uniqueArray.includes(journey.transport) === false) {
       uniqueArray.push(journey.transport)
     }
-  }
+  })
   return uniqueArray
+
+  // const uniqueArray = this.journeys.map((journey) => {
+  //   return journey.transport
+  // })
+  // return uniqueArray.filter((transport, index, uniqueArray) =>{
+  //   return index === uniqueArray.indexOf(transport)
+  ////   return true if the index of the transport equals the first index occurrence of the transport in the array else returns false which will cause it to be removed
+  // })
 };
 
 
